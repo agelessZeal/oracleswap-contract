@@ -14,6 +14,5 @@ export { Multicall2__factory } from "./Multicall2__factory";
 export { OracleBar__factory } from "./OracleBar__factory";
 export { OracleDistributor__factory } from "./OracleDistributor__factory";
 export { OracleMaker__factory } from "./OracleMaker__factory";
-export { OracleSwapRewardsManager__factory } from "./OracleSwapRewardsManager__factory";
 export { OracleToken__factory } from "./OracleToken__factory";
 export { ProphetSacrifice__factory } from "./ProphetSacrifice__factory";

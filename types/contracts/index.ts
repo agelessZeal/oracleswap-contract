@@ -22,6 +22,5 @@ export type { Multicall2 } from "./Multicall2";
 export type { OracleBar } from "./OracleBar";
 export type { OracleDistributor } from "./OracleDistributor";
 export type { OracleMaker } from "./OracleMaker";
-export type { OracleSwapRewardsManager } from "./OracleSwapRewardsManager";
 export type { OracleToken } from "./OracleToken";
 export type { ProphetSacrifice } from "./ProphetSacrifice";

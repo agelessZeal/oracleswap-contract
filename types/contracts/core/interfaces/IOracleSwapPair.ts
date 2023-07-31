@@ -34,6 +34,7 @@ export interface IOracleSwapPairInterface extends utils.Interface {
     "allowance(address,address)": FunctionFragment;
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
+    "balanceOfAt(address,uint256)": FunctionFragment;
     "burn(address)": FunctionFragment;
     "decimals()": FunctionFragment;
     "factory()": FunctionFragment;
@@ -53,6 +54,7 @@ export interface IOracleSwapPairInterface extends utils.Interface {
     "token0()": FunctionFragment;
     "token1()": FunctionFragment;
     "totalSupply()": FunctionFragment;
+    "totalSupplyAt(uint256)": FunctionFragment;
     "transfer(address,uint256)": FunctionFragment;
     "transferFrom(address,address,uint256)": FunctionFragment;
   };
@@ -65,6 +67,7 @@ export interface IOracleSwapPairInterface extends utils.Interface {
       | "allowance"
       | "approve"
       | "balanceOf"
+      | "balanceOfAt"
       | "burn"
       | "decimals"
       | "factory"
@@ -84,6 +87,7 @@ export interface IOracleSwapPairInterface extends utils.Interface {
       | "token0"
       | "token1"
       | "totalSupply"
+      | "totalSupplyAt"
       | "transfer"
       | "transferFrom"
   ): FunctionFragment;
@@ -109,6 +113,10 @@ export interface IOracleSwapPairInterface extends utils.Interface {
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "balanceOfAt",
+    values: [string, BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "burn", values: [string]): string;
   encodeFunctionData(functionFragment: "decimals", values?: undefined): string;
   encodeFunctionData(functionFragment: "factory", values?: undefined): string;
@@ -158,6 +166,10 @@ export interface IOracleSwapPairInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "totalSupplyAt",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "transfer",
     values: [string, BigNumberish]
   ): string;
@@ -181,6 +193,10 @@ export interface IOracleSwapPairInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "balanceOfAt",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "decimals", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
@@ -210,6 +226,10 @@ export interface IOracleSwapPairInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "totalSupply",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "totalSupplyAt",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "transfer", data: BytesLike): Result;
@@ -354,6 +374,12 @@ export interface IOracleSwapPair extends BaseContract {
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
     burn(
       to: string,
       overrides?: Overrides & { from?: string }
@@ -430,6 +456,11 @@ export interface IOracleSwapPair extends BaseContract {
 
     totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
     transfer(
       to: string,
       value: BigNumberish,
@@ -463,6 +494,12 @@ export interface IOracleSwapPair extends BaseContract {
   ): Promise<ContractTransaction>;
 
   balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+  balanceOfAt(
+    _owner: string,
+    _blockNumber: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
 
   burn(
     to: string,
@@ -538,6 +575,11 @@ export interface IOracleSwapPair extends BaseContract {
 
   totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
+  totalSupplyAt(
+    _blockNumber: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
   transfer(
     to: string,
     value: BigNumberish,
@@ -571,6 +613,12 @@ export interface IOracleSwapPair extends BaseContract {
     ): Promise<boolean>;
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     burn(
       to: string,
@@ -641,6 +689,11 @@ export interface IOracleSwapPair extends BaseContract {
     token1(overrides?: CallOverrides): Promise<string>;
 
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     transfer(
       to: string,
@@ -745,6 +798,12 @@ export interface IOracleSwapPair extends BaseContract {
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     burn(
       to: string,
       overrides?: Overrides & { from?: string }
@@ -811,6 +870,11 @@ export interface IOracleSwapPair extends BaseContract {
 
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     transfer(
       to: string,
       value: BigNumberish,
@@ -846,6 +910,12 @@ export interface IOracleSwapPair extends BaseContract {
 
     balanceOf(
       owner: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -923,6 +993,11 @@ export interface IOracleSwapPair extends BaseContract {
     token1(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     transfer(
       to: string,

@@ -288,6 +288,30 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
+        name: "_owner",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_blockNumber",
+        type: "uint256",
+      },
+    ],
+    name: "balanceOfAt",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
         name: "to",
         type: "address",
       },
@@ -598,6 +622,25 @@ const _abi = [
   {
     inputs: [],
     name: "totalSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_blockNumber",
+        type: "uint256",
+      },
+    ],
+    name: "totalSupplyAt",
     outputs: [
       {
         internalType: "uint256",

@@ -4,17 +4,22 @@ pragma solidity ^0.8.19;
 
 import "./interfaces/IOracleSwapFactory.sol";
 import "./OracleSwapPair.sol";
+import "./interfaces/IOracleSwapManager.sol";
 
 contract OracleSwapFactory is IOracleSwapFactory {
     address public override feeTo;
     address public override feeToSetter;
     address public override migrator;
 
+    address public immutable manager;
+
     mapping(address => mapping(address => address)) public override getPair;
     address[] public override allPairs;
 
-    constructor(address _feeToSetter) {
+    constructor(address _feeToSetter, address _manager) {
         feeToSetter = _feeToSetter;
+        require(_manager != address(0), "OracleSwap: ZERO_ADDRESS");
+        manager = _manager;
     }
 
     function allPairsLength() external view override returns (uint) {
@@ -43,10 +48,12 @@ contract OracleSwapFactory is IOracleSwapFactory {
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        OracleSwapPair(pair).initialize(token0, token1);
+        OracleSwapPair(pair).initialize(manager, token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair; // populate mapping in the reverse direction
         allPairs.push(pair);
+        
+        IOracleSwapManager(manager).setRewarderForPair(pair, token0, token1);
         emit PairCreated(token0, token1, pair, allPairs.length);
     }
 

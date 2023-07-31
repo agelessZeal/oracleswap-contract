@@ -31,21 +31,30 @@ export interface OracleSwapPairInterface extends utils.Interface {
     "DOMAIN_SEPARATOR()": FunctionFragment;
     "MINIMUM_LIQUIDITY()": FunctionFragment;
     "PERMIT_TYPEHASH()": FunctionFragment;
+    "addRewarder(address)": FunctionFragment;
     "allowance(address,address)": FunctionFragment;
     "approve(address,uint256)": FunctionFragment;
+    "balanceHistoryCleanup(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
+    "balanceOfAt(address,uint256)": FunctionFragment;
     "burn(address)": FunctionFragment;
+    "cleanerContract()": FunctionFragment;
+    "cleanupBlockNumber()": FunctionFragment;
+    "cleanupBlockNumberManager()": FunctionFragment;
     "decimals()": FunctionFragment;
     "factory()": FunctionFragment;
     "getReserves()": FunctionFragment;
-    "initialize(address,address)": FunctionFragment;
+    "initialize(address,address,address)": FunctionFragment;
     "kLast()": FunctionFragment;
+    "manager()": FunctionFragment;
     "mint(address)": FunctionFragment;
     "name()": FunctionFragment;
     "nonces(address)": FunctionFragment;
     "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
     "price0CumulativeLast()": FunctionFragment;
     "price1CumulativeLast()": FunctionFragment;
+    "setCleanupBlockNumber(uint256)": FunctionFragment;
+    "setCleanupBlockNumberManager(address)": FunctionFragment;
     "skim(address)": FunctionFragment;
     "swap(uint256,uint256,address,bytes)": FunctionFragment;
     "symbol()": FunctionFragment;
@@ -53,6 +62,9 @@ export interface OracleSwapPairInterface extends utils.Interface {
     "token0()": FunctionFragment;
     "token1()": FunctionFragment;
     "totalSupply()": FunctionFragment;
+    "totalSupplyAt(uint256)": FunctionFragment;
+    "totalSupplyCacheCleanup(uint256)": FunctionFragment;
+    "totalSupplyHistoryCleanup(uint256)": FunctionFragment;
     "transfer(address,uint256)": FunctionFragment;
     "transferFrom(address,address,uint256)": FunctionFragment;
   };
@@ -62,21 +74,30 @@ export interface OracleSwapPairInterface extends utils.Interface {
       | "DOMAIN_SEPARATOR"
       | "MINIMUM_LIQUIDITY"
       | "PERMIT_TYPEHASH"
+      | "addRewarder"
       | "allowance"
       | "approve"
+      | "balanceHistoryCleanup"
       | "balanceOf"
+      | "balanceOfAt"
       | "burn"
+      | "cleanerContract"
+      | "cleanupBlockNumber"
+      | "cleanupBlockNumberManager"
       | "decimals"
       | "factory"
       | "getReserves"
       | "initialize"
       | "kLast"
+      | "manager"
       | "mint"
       | "name"
       | "nonces"
       | "permit"
       | "price0CumulativeLast"
       | "price1CumulativeLast"
+      | "setCleanupBlockNumber"
+      | "setCleanupBlockNumberManager"
       | "skim"
       | "swap"
       | "symbol"
@@ -84,6 +105,9 @@ export interface OracleSwapPairInterface extends utils.Interface {
       | "token0"
       | "token1"
       | "totalSupply"
+      | "totalSupplyAt"
+      | "totalSupplyCacheCleanup"
+      | "totalSupplyHistoryCleanup"
       | "transfer"
       | "transferFrom"
   ): FunctionFragment;
@@ -100,6 +124,7 @@ export interface OracleSwapPairInterface extends utils.Interface {
     functionFragment: "PERMIT_TYPEHASH",
     values?: undefined
   ): string;
+  encodeFunctionData(functionFragment: "addRewarder", values: [string]): string;
   encodeFunctionData(
     functionFragment: "allowance",
     values: [string, string]
@@ -108,8 +133,28 @@ export interface OracleSwapPairInterface extends utils.Interface {
     functionFragment: "approve",
     values: [string, BigNumberish]
   ): string;
+  encodeFunctionData(
+    functionFragment: "balanceHistoryCleanup",
+    values: [string, BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "balanceOfAt",
+    values: [string, BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "burn", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "cleanerContract",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "cleanupBlockNumber",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "cleanupBlockNumberManager",
+    values?: undefined
+  ): string;
   encodeFunctionData(functionFragment: "decimals", values?: undefined): string;
   encodeFunctionData(functionFragment: "factory", values?: undefined): string;
   encodeFunctionData(
@@ -118,9 +163,10 @@ export interface OracleSwapPairInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "initialize",
-    values: [string, string]
+    values: [string, string, string]
   ): string;
   encodeFunctionData(functionFragment: "kLast", values?: undefined): string;
+  encodeFunctionData(functionFragment: "manager", values?: undefined): string;
   encodeFunctionData(functionFragment: "mint", values: [string]): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(functionFragment: "nonces", values: [string]): string;
@@ -144,6 +190,14 @@ export interface OracleSwapPairInterface extends utils.Interface {
     functionFragment: "price1CumulativeLast",
     values?: undefined
   ): string;
+  encodeFunctionData(
+    functionFragment: "setCleanupBlockNumber",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setCleanupBlockNumberManager",
+    values: [string]
+  ): string;
   encodeFunctionData(functionFragment: "skim", values: [string]): string;
   encodeFunctionData(
     functionFragment: "swap",
@@ -156,6 +210,18 @@ export interface OracleSwapPairInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "totalSupply",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "totalSupplyAt",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "totalSupplyCacheCleanup",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "totalSupplyHistoryCleanup",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "transfer",
@@ -178,10 +244,34 @@ export interface OracleSwapPairInterface extends utils.Interface {
     functionFragment: "PERMIT_TYPEHASH",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "addRewarder",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "balanceHistoryCleanup",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "balanceOfAt",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "cleanerContract",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "cleanupBlockNumber",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "cleanupBlockNumberManager",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "decimals", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
   decodeFunctionResult(
@@ -190,6 +280,7 @@ export interface OracleSwapPairInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "kLast", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "manager", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "nonces", data: BytesLike): Result;
@@ -202,6 +293,14 @@ export interface OracleSwapPairInterface extends utils.Interface {
     functionFragment: "price1CumulativeLast",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "setCleanupBlockNumber",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setCleanupBlockNumberManager",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "skim", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
@@ -210,6 +309,18 @@ export interface OracleSwapPairInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "totalSupply",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "totalSupplyAt",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "totalSupplyCacheCleanup",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "totalSupplyHistoryCleanup",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "transfer", data: BytesLike): Result;
@@ -221,6 +332,7 @@ export interface OracleSwapPairInterface extends utils.Interface {
   events: {
     "Approval(address,address,uint256)": EventFragment;
     "Burn(address,uint256,uint256,address)": EventFragment;
+    "CreatedTotalSupplyCache(uint256)": EventFragment;
     "Mint(address,uint256,uint256)": EventFragment;
     "Swap(address,uint256,uint256,uint256,uint256,address)": EventFragment;
     "Sync(uint112,uint112)": EventFragment;
@@ -229,6 +341,7 @@ export interface OracleSwapPairInterface extends utils.Interface {
 
   getEvent(nameOrSignatureOrTopic: "Approval"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "CreatedTotalSupplyCache"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Swap"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Sync"): EventFragment;
@@ -259,6 +372,17 @@ export type BurnEvent = TypedEvent<
 >;
 
 export type BurnEventFilter = TypedEventFilter<BurnEvent>;
+
+export interface CreatedTotalSupplyCacheEventObject {
+  _blockNumber: BigNumber;
+}
+export type CreatedTotalSupplyCacheEvent = TypedEvent<
+  [BigNumber],
+  CreatedTotalSupplyCacheEventObject
+>;
+
+export type CreatedTotalSupplyCacheEventFilter =
+  TypedEventFilter<CreatedTotalSupplyCacheEvent>;
 
 export interface MintEventObject {
   sender: string;
@@ -340,6 +464,11 @@ export interface OracleSwapPair extends BaseContract {
 
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<[string]>;
 
+    addRewarder(
+      _rewarder: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
     allowance(
       arg0: string,
       arg1: string,
@@ -352,12 +481,30 @@ export interface OracleSwapPair extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
+    balanceHistoryCleanup(
+      _owner: string,
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
     balanceOf(arg0: string, overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
 
     burn(
       to: string,
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
+
+    cleanerContract(overrides?: CallOverrides): Promise<[string]>;
+
+    cleanupBlockNumber(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    cleanupBlockNumberManager(overrides?: CallOverrides): Promise<[string]>;
 
     decimals(overrides?: CallOverrides): Promise<[number]>;
 
@@ -374,12 +521,15 @@ export interface OracleSwapPair extends BaseContract {
     >;
 
     initialize(
+      _manager: string,
       _token0: string,
       _token1: string,
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
     kLast(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    manager(overrides?: CallOverrides): Promise<[string]>;
 
     mint(
       to: string,
@@ -404,6 +554,16 @@ export interface OracleSwapPair extends BaseContract {
     price0CumulativeLast(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     price1CumulativeLast(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    setCleanupBlockNumber(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
+    setCleanupBlockNumberManager(
+      _cleanupBlockNumberManager: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
 
     skim(
       to: string,
@@ -430,6 +590,21 @@ export interface OracleSwapPair extends BaseContract {
 
     totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
+    totalSupplyCacheCleanup(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
+    totalSupplyHistoryCleanup(
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
     transfer(
       to: string,
       value: BigNumberish,
@@ -450,6 +625,11 @@ export interface OracleSwapPair extends BaseContract {
 
   PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
+  addRewarder(
+    _rewarder: string,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
   allowance(
     arg0: string,
     arg1: string,
@@ -462,12 +642,30 @@ export interface OracleSwapPair extends BaseContract {
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
+  balanceHistoryCleanup(
+    _owner: string,
+    _count: BigNumberish,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
   balanceOf(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+  balanceOfAt(
+    _owner: string,
+    _blockNumber: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
 
   burn(
     to: string,
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
+
+  cleanerContract(overrides?: CallOverrides): Promise<string>;
+
+  cleanupBlockNumber(overrides?: CallOverrides): Promise<BigNumber>;
+
+  cleanupBlockNumberManager(overrides?: CallOverrides): Promise<string>;
 
   decimals(overrides?: CallOverrides): Promise<number>;
 
@@ -484,12 +682,15 @@ export interface OracleSwapPair extends BaseContract {
   >;
 
   initialize(
+    _manager: string,
     _token0: string,
     _token1: string,
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
   kLast(overrides?: CallOverrides): Promise<BigNumber>;
+
+  manager(overrides?: CallOverrides): Promise<string>;
 
   mint(
     to: string,
@@ -515,6 +716,16 @@ export interface OracleSwapPair extends BaseContract {
 
   price1CumulativeLast(overrides?: CallOverrides): Promise<BigNumber>;
 
+  setCleanupBlockNumber(
+    _blockNumber: BigNumberish,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
+  setCleanupBlockNumberManager(
+    _cleanupBlockNumberManager: string,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
   skim(
     to: string,
     overrides?: Overrides & { from?: string }
@@ -538,6 +749,21 @@ export interface OracleSwapPair extends BaseContract {
 
   totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
+  totalSupplyAt(
+    _blockNumber: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
+  totalSupplyCacheCleanup(
+    _blockNumber: BigNumberish,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
+  totalSupplyHistoryCleanup(
+    _count: BigNumberish,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
   transfer(
     to: string,
     value: BigNumberish,
@@ -558,6 +784,8 @@ export interface OracleSwapPair extends BaseContract {
 
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
+    addRewarder(_rewarder: string, overrides?: CallOverrides): Promise<void>;
+
     allowance(
       arg0: string,
       arg1: string,
@@ -570,7 +798,19 @@ export interface OracleSwapPair extends BaseContract {
       overrides?: CallOverrides
     ): Promise<boolean>;
 
+    balanceHistoryCleanup(
+      _owner: string,
+      _count: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     balanceOf(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     burn(
       to: string,
@@ -578,6 +818,12 @@ export interface OracleSwapPair extends BaseContract {
     ): Promise<
       [BigNumber, BigNumber] & { amount0: BigNumber; amount1: BigNumber }
     >;
+
+    cleanerContract(overrides?: CallOverrides): Promise<string>;
+
+    cleanupBlockNumber(overrides?: CallOverrides): Promise<BigNumber>;
+
+    cleanupBlockNumberManager(overrides?: CallOverrides): Promise<string>;
 
     decimals(overrides?: CallOverrides): Promise<number>;
 
@@ -594,12 +840,15 @@ export interface OracleSwapPair extends BaseContract {
     >;
 
     initialize(
+      _manager: string,
       _token0: string,
       _token1: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
     kLast(overrides?: CallOverrides): Promise<BigNumber>;
+
+    manager(overrides?: CallOverrides): Promise<string>;
 
     mint(to: string, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -622,6 +871,16 @@ export interface OracleSwapPair extends BaseContract {
 
     price1CumulativeLast(overrides?: CallOverrides): Promise<BigNumber>;
 
+    setCleanupBlockNumber(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    setCleanupBlockNumberManager(
+      _cleanupBlockNumberManager: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     skim(to: string, overrides?: CallOverrides): Promise<void>;
 
     swap(
@@ -641,6 +900,21 @@ export interface OracleSwapPair extends BaseContract {
     token1(overrides?: CallOverrides): Promise<string>;
 
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
+
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    totalSupplyCacheCleanup(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    totalSupplyHistoryCleanup(
+      _count: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     transfer(
       to: string,
@@ -680,6 +954,13 @@ export interface OracleSwapPair extends BaseContract {
       amount1?: null,
       to?: string | null
     ): BurnEventFilter;
+
+    "CreatedTotalSupplyCache(uint256)"(
+      _blockNumber?: null
+    ): CreatedTotalSupplyCacheEventFilter;
+    CreatedTotalSupplyCache(
+      _blockNumber?: null
+    ): CreatedTotalSupplyCacheEventFilter;
 
     "Mint(address,uint256,uint256)"(
       sender?: string | null,
@@ -731,6 +1012,11 @@ export interface OracleSwapPair extends BaseContract {
 
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<BigNumber>;
 
+    addRewarder(
+      _rewarder: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
     allowance(
       arg0: string,
       arg1: string,
@@ -743,12 +1029,30 @@ export interface OracleSwapPair extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
+    balanceHistoryCleanup(
+      _owner: string,
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
     balanceOf(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     burn(
       to: string,
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
+
+    cleanerContract(overrides?: CallOverrides): Promise<BigNumber>;
+
+    cleanupBlockNumber(overrides?: CallOverrides): Promise<BigNumber>;
+
+    cleanupBlockNumberManager(overrides?: CallOverrides): Promise<BigNumber>;
 
     decimals(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -757,12 +1061,15 @@ export interface OracleSwapPair extends BaseContract {
     getReserves(overrides?: CallOverrides): Promise<BigNumber>;
 
     initialize(
+      _manager: string,
       _token0: string,
       _token1: string,
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
     kLast(overrides?: CallOverrides): Promise<BigNumber>;
+
+    manager(overrides?: CallOverrides): Promise<BigNumber>;
 
     mint(
       to: string,
@@ -788,6 +1095,16 @@ export interface OracleSwapPair extends BaseContract {
 
     price1CumulativeLast(overrides?: CallOverrides): Promise<BigNumber>;
 
+    setCleanupBlockNumber(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
+    setCleanupBlockNumberManager(
+      _cleanupBlockNumberManager: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
     skim(
       to: string,
       overrides?: Overrides & { from?: string }
@@ -811,6 +1128,21 @@ export interface OracleSwapPair extends BaseContract {
 
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    totalSupplyCacheCleanup(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
+    totalSupplyHistoryCleanup(
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
     transfer(
       to: string,
       value: BigNumberish,
@@ -832,6 +1164,11 @@ export interface OracleSwapPair extends BaseContract {
 
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    addRewarder(
+      _rewarder: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
     allowance(
       arg0: string,
       arg1: string,
@@ -844,14 +1181,36 @@ export interface OracleSwapPair extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 
+    balanceHistoryCleanup(
+      _owner: string,
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
     balanceOf(
       arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    balanceOfAt(
+      _owner: string,
+      _blockNumber: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     burn(
       to: string,
       overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
+    cleanerContract(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    cleanupBlockNumber(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    cleanupBlockNumberManager(
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     decimals(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -861,12 +1220,15 @@ export interface OracleSwapPair extends BaseContract {
     getReserves(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     initialize(
+      _manager: string,
       _token0: string,
       _token1: string,
       overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 
     kLast(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    manager(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     mint(
       to: string,
@@ -899,6 +1261,16 @@ export interface OracleSwapPair extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    setCleanupBlockNumber(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
+    setCleanupBlockNumberManager(
+      _cleanupBlockNumberManager: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
     skim(
       to: string,
       overrides?: Overrides & { from?: string }
@@ -923,6 +1295,21 @@ export interface OracleSwapPair extends BaseContract {
     token1(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    totalSupplyAt(
+      _blockNumber: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    totalSupplyCacheCleanup(
+      _blockNumber: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
+    totalSupplyHistoryCleanup(
+      _count: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
 
     transfer(
       to: string,

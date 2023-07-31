@@ -5,6 +5,8 @@ export * as ierc20Sol from "./IERC20.sol";
 export { IOracleSwapCallee__factory } from "./IOracleSwapCallee__factory";
 export { IOracleSwapERC20__factory } from "./IOracleSwapERC20__factory";
 export { IOracleSwapFactory__factory } from "./IOracleSwapFactory__factory";
+export { IOracleSwapFtsoReward__factory } from "./IOracleSwapFtsoReward__factory";
+export { IOracleSwapManager__factory } from "./IOracleSwapManager__factory";
 export { IOracleSwapPair__factory } from "./IOracleSwapPair__factory";
 export { IOracleSwapRouter__factory } from "./IOracleSwapRouter__factory";
 export { IOracleSwapRouter01__factory } from "./IOracleSwapRouter01__factory";

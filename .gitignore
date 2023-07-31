@@ -20,4 +20,10 @@ typechain-types
 # Hardhat files
 cache
 artifacts
+types
+types/
+/types
+types/contracts/**
+types/*
+types/**
 

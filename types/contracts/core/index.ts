@@ -3,8 +3,12 @@
 /* eslint-disable */
 import type * as oracleSwapPairSol from "./OracleSwapPair.sol";
 export type { oracleSwapPairSol };
+import type * as ftso from "./ftso";
+export type { ftso };
 import type * as interfaces from "./interfaces";
 export type { interfaces };
 export type { OracleSwapERC20 } from "./OracleSwapERC20";
 export type { OracleSwapFactory } from "./OracleSwapFactory";
+export type { OracleSwapFtsoReward } from "./OracleSwapFtsoReward";
+export type { OracleSwapManager } from "./OracleSwapManager";
 export type { OracleSwapRouter } from "./OracleSwapRouter";

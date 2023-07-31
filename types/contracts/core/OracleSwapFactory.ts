@@ -34,6 +34,7 @@ export interface OracleSwapFactoryInterface extends utils.Interface {
     "feeTo()": FunctionFragment;
     "feeToSetter()": FunctionFragment;
     "getPair(address,address)": FunctionFragment;
+    "manager()": FunctionFragment;
     "migrator()": FunctionFragment;
     "pairCodeHash()": FunctionFragment;
     "setFeeTo(address)": FunctionFragment;
@@ -49,6 +50,7 @@ export interface OracleSwapFactoryInterface extends utils.Interface {
       | "feeTo"
       | "feeToSetter"
       | "getPair"
+      | "manager"
       | "migrator"
       | "pairCodeHash"
       | "setFeeTo"
@@ -77,6 +79,7 @@ export interface OracleSwapFactoryInterface extends utils.Interface {
     functionFragment: "getPair",
     values: [string, string]
   ): string;
+  encodeFunctionData(functionFragment: "manager", values?: undefined): string;
   encodeFunctionData(functionFragment: "migrator", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "pairCodeHash",
@@ -101,6 +104,7 @@ export interface OracleSwapFactoryInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getPair", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "manager", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "migrator", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "pairCodeHash",
@@ -183,6 +187,8 @@ export interface OracleSwapFactory extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>;
 
+    manager(overrides?: CallOverrides): Promise<[string]>;
+
     migrator(overrides?: CallOverrides): Promise<[string]>;
 
     pairCodeHash(overrides?: CallOverrides): Promise<[string]>;
@@ -223,6 +229,8 @@ export interface OracleSwapFactory extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>;
 
+  manager(overrides?: CallOverrides): Promise<string>;
+
   migrator(overrides?: CallOverrides): Promise<string>;
 
   pairCodeHash(overrides?: CallOverrides): Promise<string>;
@@ -262,6 +270,8 @@ export interface OracleSwapFactory extends BaseContract {
       arg1: string,
       overrides?: CallOverrides
     ): Promise<string>;
+
+    manager(overrides?: CallOverrides): Promise<string>;
 
     migrator(overrides?: CallOverrides): Promise<string>;
 
@@ -313,6 +323,8 @@ export interface OracleSwapFactory extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    manager(overrides?: CallOverrides): Promise<BigNumber>;
+
     migrator(overrides?: CallOverrides): Promise<BigNumber>;
 
     pairCodeHash(overrides?: CallOverrides): Promise<BigNumber>;
@@ -356,6 +368,8 @@ export interface OracleSwapFactory extends BaseContract {
       arg1: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    manager(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     migrator(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

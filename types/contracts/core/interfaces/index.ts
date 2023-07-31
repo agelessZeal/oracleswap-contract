@@ -6,6 +6,8 @@ export type { ierc20Sol };
 export type { IOracleSwapCallee } from "./IOracleSwapCallee";
 export type { IOracleSwapERC20 } from "./IOracleSwapERC20";
 export type { IOracleSwapFactory } from "./IOracleSwapFactory";
+export type { IOracleSwapFtsoReward } from "./IOracleSwapFtsoReward";
+export type { IOracleSwapManager } from "./IOracleSwapManager";
 export type { IOracleSwapPair } from "./IOracleSwapPair";
 export type { IOracleSwapRouter } from "./IOracleSwapRouter";
 export type { IOracleSwapRouter01 } from "./IOracleSwapRouter01";

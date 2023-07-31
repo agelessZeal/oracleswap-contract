@@ -17,6 +17,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Ownable__factory>;
     getContractFactory(
+      name: "IERC5267",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC5267__factory>;
+    getContractFactory(
       name: "ERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC20__factory>;
@@ -33,6 +37,358 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC20__factory>;
     getContractFactory(
+      name: "EIP712",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.EIP712__factory>;
+    getContractFactory(
+      name: "ShortStrings",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ShortStrings__factory>;
+    getContractFactory(
+      name: "AddressUpdatable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.AddressUpdatable__factory>;
+    getContractFactory(
+      name: "AddressUpdater",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.AddressUpdater__factory>;
+    getContractFactory(
+      name: "IIAddressUpdatable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIAddressUpdatable__factory>;
+    getContractFactory(
+      name: "IIAddressUpdater",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIAddressUpdater__factory>;
+    getContractFactory(
+      name: "IIClaimSetupManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIClaimSetupManager__factory>;
+    getContractFactory(
+      name: "IIDelegationAccount",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIDelegationAccount__factory>;
+    getContractFactory(
+      name: "IIFtso",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIFtso__factory>;
+    getContractFactory(
+      name: "IIFtsoManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIFtsoManager__factory>;
+    getContractFactory(
+      name: "IIFtsoManagerV1",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIFtsoManagerV1__factory>;
+    getContractFactory(
+      name: "IFlareDaemonize",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFlareDaemonize__factory>;
+    getContractFactory(
+      name: "IFtsoGenesis",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoGenesis__factory>;
+    getContractFactory(
+      name: "IFtsoManagerGenesis",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoManagerGenesis__factory>;
+    getContractFactory(
+      name: "IFtsoRegistryGenesis",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoRegistryGenesis__factory>;
+    getContractFactory(
+      name: "IInflationGenesis",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IInflationGenesis__factory>;
+    getContractFactory(
+      name: "IIPriceSubmitter",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIPriceSubmitter__factory>;
+    getContractFactory(
+      name: "Governed",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Governed__factory>;
+    getContractFactory(
+      name: "GovernedAtGenesis",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernedAtGenesis__factory>;
+    getContractFactory(
+      name: "GovernedBase",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernedBase__factory>;
+    getContractFactory(
+      name: "Governor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Governor__factory>;
+    getContractFactory(
+      name: "GovernorProposals",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernorProposals__factory>;
+    getContractFactory(
+      name: "GovernorProposer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernorProposer__factory>;
+    getContractFactory(
+      name: "GovernorVotePower",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernorVotePower__factory>;
+    getContractFactory(
+      name: "PollingFoundation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PollingFoundation__factory>;
+    getContractFactory(
+      name: "PollingFtso",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PollingFtso__factory>;
+    getContractFactory(
+      name: "IIGovernorProposer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIGovernorProposer__factory>;
+    getContractFactory(
+      name: "IIPollingFoundation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIPollingFoundation__factory>;
+    getContractFactory(
+      name: "Timelock",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Timelock__factory>;
+    getContractFactory(
+      name: "IIInflationAllocation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIInflationAllocation__factory>;
+    getContractFactory(
+      name: "IIInflationPercentageProvider",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIInflationPercentageProvider__factory>;
+    getContractFactory(
+      name: "IIInflationReceiver",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIInflationReceiver__factory>;
+    getContractFactory(
+      name: "IIInflationSharingPercentageProvider",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIInflationSharingPercentageProvider__factory>;
+    getContractFactory(
+      name: "IISupply",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IISupply__factory>;
+    getContractFactory(
+      name: "CheckPointable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CheckPointable__factory>;
+    getContractFactory(
+      name: "CleanupBlockNumberManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CleanupBlockNumberManager__factory>;
+    getContractFactory(
+      name: "Delegatable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Delegatable__factory>;
+    getContractFactory(
+      name: "GovernanceVotePower",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GovernanceVotePower__factory>;
+    getContractFactory(
+      name: "VPContract",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VPContract__factory>;
+    getContractFactory(
+      name: "VPToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VPToken__factory>;
+    getContractFactory(
+      name: "WNat",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.WNat__factory>;
+    getContractFactory(
+      name: "IICleanable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IICleanable__factory>;
+    getContractFactory(
+      name: "IIGovernanceVotePower",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIGovernanceVotePower__factory>;
+    getContractFactory(
+      name: "IIVPContract",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIVPContract__factory>;
+    getContractFactory(
+      name: "IIVPToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIVPToken__factory>;
+    getContractFactory(
+      name: "DelegationHistory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.DelegationHistory__factory>;
+    getContractFactory(
+      name: "IICombinedNatBalance",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IICombinedNatBalance__factory>;
+    getContractFactory(
+      name: "PercentageDelegation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PercentageDelegation__factory>;
+    getContractFactory(
+      name: "IIFtsoRewardManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIFtsoRewardManager__factory>;
+    getContractFactory(
+      name: "IIGenericRewardManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIGenericRewardManager__factory>;
+    getContractFactory(
+      name: "IIIncentivePoolAllocation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIIncentivePoolAllocation__factory>;
+    getContractFactory(
+      name: "IIIncentivePoolPercentageProvider",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIIncentivePoolPercentageProvider__factory>;
+    getContractFactory(
+      name: "IIIncentivePoolReceiver",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIIncentivePoolReceiver__factory>;
+    getContractFactory(
+      name: "IIIncentivePoolSharingPercentageProvider",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIIncentivePoolSharingPercentageProvider__factory>;
+    getContractFactory(
+      name: "IITokenPool",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IITokenPool__factory>;
+    getContractFactory(
+      name: "IClaimSetupManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IClaimSetupManager__factory>;
+    getContractFactory(
+      name: "IDelegationAccount",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IDelegationAccount__factory>;
+    getContractFactory(
+      name: "IDistributionToDelegators",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IDistributionToDelegators__factory>;
+    getContractFactory(
+      name: "IFlareAssetRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFlareAssetRegistry__factory>;
+    getContractFactory(
+      name: "IFlareContractRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFlareContractRegistry__factory>;
+    getContractFactory(
+      name: "IFtso",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtso__factory>;
+    getContractFactory(
+      name: "IFtsoManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoManager__factory>;
+    getContractFactory(
+      name: "IFtsoRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoRegistry__factory>;
+    getContractFactory(
+      name: "IFtsoRewardManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IFtsoRewardManager__factory>;
+    getContractFactory(
+      name: "IGenericRewardManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IGenericRewardManager__factory>;
+    getContractFactory(
+      name: "IGovernanceSettings",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IGovernanceSettings__factory>;
+    getContractFactory(
+      name: "IGovernanceVotePower",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IGovernanceVotePower__factory>;
+    getContractFactory(
+      name: "IGovernor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IGovernor__factory>;
+    getContractFactory(
+      name: "IPollingFtso",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IPollingFtso__factory>;
+    getContractFactory(
+      name: "IPriceSubmitter",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IPriceSubmitter__factory>;
+    getContractFactory(
+      name: "IValidatorRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IValidatorRegistry__factory>;
+    getContractFactory(
+      name: "IVoterWhitelister",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IVoterWhitelister__factory>;
+    getContractFactory(
+      name: "IVPContractEvents",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IVPContractEvents__factory>;
+    getContractFactory(
+      name: "IVPToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IVPToken__factory>;
+    getContractFactory(
+      name: "IWNat",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWNat__factory>;
+    getContractFactory(
+      name: "BokkyPooBahsDateTimeLibrary",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BokkyPooBahsDateTimeLibrary__factory>;
+    getContractFactory(
+      name: "FlareContractRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FlareContractRegistry__factory>;
+    getContractFactory(
+      name: "FtsoRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FtsoRegistry__factory>;
+    getContractFactory(
+      name: "FtsoRegistryProxy",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FtsoRegistryProxy__factory>;
+    getContractFactory(
+      name: "FundDistributor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FundDistributor__factory>;
+    getContractFactory(
+      name: "ProxyGoverned",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ProxyGoverned__factory>;
+    getContractFactory(
+      name: "RevertErrorTracking",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RevertErrorTracking__factory>;
+    getContractFactory(
+      name: "ValidatorRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ValidatorRegistry__factory>;
+    getContractFactory(
+      name: "VoterWhitelister",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VoterWhitelister__factory>;
+    getContractFactory(
+      name: "IIFtsoRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIFtsoRegistry__factory>;
+    getContractFactory(
+      name: "IIRandomProvider",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIRandomProvider__factory>;
+    getContractFactory(
+      name: "IIVoterWhitelister",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IIVoterWhitelister__factory>;
+    getContractFactory(
+      name: "IUpdateValidators",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUpdateValidators__factory>;
+    getContractFactory(
       name: "IERC20Uniswap",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC20Uniswap__factory>;
@@ -48,6 +404,14 @@ declare module "hardhat/types/runtime" {
       name: "IOracleSwapFactory",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IOracleSwapFactory__factory>;
+    getContractFactory(
+      name: "IOracleSwapFtsoReward",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IOracleSwapFtsoReward__factory>;
+    getContractFactory(
+      name: "IOracleSwapManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IOracleSwapManager__factory>;
     getContractFactory(
       name: "IOracleSwapPair",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -72,6 +436,14 @@ declare module "hardhat/types/runtime" {
       name: "OracleSwapFactory",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OracleSwapFactory__factory>;
+    getContractFactory(
+      name: "OracleSwapFtsoReward",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.OracleSwapFtsoReward__factory>;
+    getContractFactory(
+      name: "OracleSwapManager",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.OracleSwapManager__factory>;
     getContractFactory(
       name: "IMigrator",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -165,10 +537,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MasterChef__factory>;
     getContractFactory(
-      name: "OracleSwapRewardsManager",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OracleSwapRewardsManager__factory>;
-    getContractFactory(
       name: "OracleToken",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OracleToken__factory>;
@@ -199,6 +567,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Ownable>;
     getContractAt(
+      name: "IERC5267",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC5267>;
+    getContractAt(
       name: "ERC20",
       address: string,
       signer?: ethers.Signer
@@ -219,6 +592,446 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC20>;
     getContractAt(
+      name: "EIP712",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.EIP712>;
+    getContractAt(
+      name: "ShortStrings",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ShortStrings>;
+    getContractAt(
+      name: "AddressUpdatable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.AddressUpdatable>;
+    getContractAt(
+      name: "AddressUpdater",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.AddressUpdater>;
+    getContractAt(
+      name: "IIAddressUpdatable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIAddressUpdatable>;
+    getContractAt(
+      name: "IIAddressUpdater",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIAddressUpdater>;
+    getContractAt(
+      name: "IIClaimSetupManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIClaimSetupManager>;
+    getContractAt(
+      name: "IIDelegationAccount",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIDelegationAccount>;
+    getContractAt(
+      name: "IIFtso",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIFtso>;
+    getContractAt(
+      name: "IIFtsoManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIFtsoManager>;
+    getContractAt(
+      name: "IIFtsoManagerV1",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIFtsoManagerV1>;
+    getContractAt(
+      name: "IFlareDaemonize",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFlareDaemonize>;
+    getContractAt(
+      name: "IFtsoGenesis",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoGenesis>;
+    getContractAt(
+      name: "IFtsoManagerGenesis",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoManagerGenesis>;
+    getContractAt(
+      name: "IFtsoRegistryGenesis",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoRegistryGenesis>;
+    getContractAt(
+      name: "IInflationGenesis",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IInflationGenesis>;
+    getContractAt(
+      name: "IIPriceSubmitter",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIPriceSubmitter>;
+    getContractAt(
+      name: "Governed",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Governed>;
+    getContractAt(
+      name: "GovernedAtGenesis",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernedAtGenesis>;
+    getContractAt(
+      name: "GovernedBase",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernedBase>;
+    getContractAt(
+      name: "Governor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Governor>;
+    getContractAt(
+      name: "GovernorProposals",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernorProposals>;
+    getContractAt(
+      name: "GovernorProposer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernorProposer>;
+    getContractAt(
+      name: "GovernorVotePower",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernorVotePower>;
+    getContractAt(
+      name: "PollingFoundation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PollingFoundation>;
+    getContractAt(
+      name: "PollingFtso",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PollingFtso>;
+    getContractAt(
+      name: "IIGovernorProposer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIGovernorProposer>;
+    getContractAt(
+      name: "IIPollingFoundation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIPollingFoundation>;
+    getContractAt(
+      name: "Timelock",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Timelock>;
+    getContractAt(
+      name: "IIInflationAllocation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIInflationAllocation>;
+    getContractAt(
+      name: "IIInflationPercentageProvider",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIInflationPercentageProvider>;
+    getContractAt(
+      name: "IIInflationReceiver",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIInflationReceiver>;
+    getContractAt(
+      name: "IIInflationSharingPercentageProvider",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIInflationSharingPercentageProvider>;
+    getContractAt(
+      name: "IISupply",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IISupply>;
+    getContractAt(
+      name: "CheckPointable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CheckPointable>;
+    getContractAt(
+      name: "CleanupBlockNumberManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CleanupBlockNumberManager>;
+    getContractAt(
+      name: "Delegatable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Delegatable>;
+    getContractAt(
+      name: "GovernanceVotePower",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GovernanceVotePower>;
+    getContractAt(
+      name: "VPContract",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VPContract>;
+    getContractAt(
+      name: "VPToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VPToken>;
+    getContractAt(
+      name: "WNat",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.WNat>;
+    getContractAt(
+      name: "IICleanable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IICleanable>;
+    getContractAt(
+      name: "IIGovernanceVotePower",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIGovernanceVotePower>;
+    getContractAt(
+      name: "IIVPContract",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIVPContract>;
+    getContractAt(
+      name: "IIVPToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIVPToken>;
+    getContractAt(
+      name: "DelegationHistory",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.DelegationHistory>;
+    getContractAt(
+      name: "IICombinedNatBalance",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IICombinedNatBalance>;
+    getContractAt(
+      name: "PercentageDelegation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PercentageDelegation>;
+    getContractAt(
+      name: "IIFtsoRewardManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIFtsoRewardManager>;
+    getContractAt(
+      name: "IIGenericRewardManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIGenericRewardManager>;
+    getContractAt(
+      name: "IIIncentivePoolAllocation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIIncentivePoolAllocation>;
+    getContractAt(
+      name: "IIIncentivePoolPercentageProvider",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIIncentivePoolPercentageProvider>;
+    getContractAt(
+      name: "IIIncentivePoolReceiver",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIIncentivePoolReceiver>;
+    getContractAt(
+      name: "IIIncentivePoolSharingPercentageProvider",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIIncentivePoolSharingPercentageProvider>;
+    getContractAt(
+      name: "IITokenPool",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IITokenPool>;
+    getContractAt(
+      name: "IClaimSetupManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IClaimSetupManager>;
+    getContractAt(
+      name: "IDelegationAccount",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IDelegationAccount>;
+    getContractAt(
+      name: "IDistributionToDelegators",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IDistributionToDelegators>;
+    getContractAt(
+      name: "IFlareAssetRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFlareAssetRegistry>;
+    getContractAt(
+      name: "IFlareContractRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFlareContractRegistry>;
+    getContractAt(
+      name: "IFtso",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtso>;
+    getContractAt(
+      name: "IFtsoManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoManager>;
+    getContractAt(
+      name: "IFtsoRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoRegistry>;
+    getContractAt(
+      name: "IFtsoRewardManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IFtsoRewardManager>;
+    getContractAt(
+      name: "IGenericRewardManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IGenericRewardManager>;
+    getContractAt(
+      name: "IGovernanceSettings",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IGovernanceSettings>;
+    getContractAt(
+      name: "IGovernanceVotePower",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IGovernanceVotePower>;
+    getContractAt(
+      name: "IGovernor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IGovernor>;
+    getContractAt(
+      name: "IPollingFtso",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IPollingFtso>;
+    getContractAt(
+      name: "IPriceSubmitter",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IPriceSubmitter>;
+    getContractAt(
+      name: "IValidatorRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IValidatorRegistry>;
+    getContractAt(
+      name: "IVoterWhitelister",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IVoterWhitelister>;
+    getContractAt(
+      name: "IVPContractEvents",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IVPContractEvents>;
+    getContractAt(
+      name: "IVPToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IVPToken>;
+    getContractAt(
+      name: "IWNat",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWNat>;
+    getContractAt(
+      name: "BokkyPooBahsDateTimeLibrary",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BokkyPooBahsDateTimeLibrary>;
+    getContractAt(
+      name: "FlareContractRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FlareContractRegistry>;
+    getContractAt(
+      name: "FtsoRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FtsoRegistry>;
+    getContractAt(
+      name: "FtsoRegistryProxy",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FtsoRegistryProxy>;
+    getContractAt(
+      name: "FundDistributor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FundDistributor>;
+    getContractAt(
+      name: "ProxyGoverned",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ProxyGoverned>;
+    getContractAt(
+      name: "RevertErrorTracking",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.RevertErrorTracking>;
+    getContractAt(
+      name: "ValidatorRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ValidatorRegistry>;
+    getContractAt(
+      name: "VoterWhitelister",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VoterWhitelister>;
+    getContractAt(
+      name: "IIFtsoRegistry",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIFtsoRegistry>;
+    getContractAt(
+      name: "IIRandomProvider",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIRandomProvider>;
+    getContractAt(
+      name: "IIVoterWhitelister",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IIVoterWhitelister>;
+    getContractAt(
+      name: "IUpdateValidators",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUpdateValidators>;
+    getContractAt(
       name: "IERC20Uniswap",
       address: string,
       signer?: ethers.Signer
@@ -238,6 +1051,16 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IOracleSwapFactory>;
+    getContractAt(
+      name: "IOracleSwapFtsoReward",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IOracleSwapFtsoReward>;
+    getContractAt(
+      name: "IOracleSwapManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IOracleSwapManager>;
     getContractAt(
       name: "IOracleSwapPair",
       address: string,
@@ -268,6 +1091,16 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.OracleSwapFactory>;
+    getContractAt(
+      name: "OracleSwapFtsoReward",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.OracleSwapFtsoReward>;
+    getContractAt(
+      name: "OracleSwapManager",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.OracleSwapManager>;
     getContractAt(
       name: "IMigrator",
       address: string,
@@ -383,11 +1216,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.MasterChef>;
-    getContractAt(
-      name: "OracleSwapRewardsManager",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OracleSwapRewardsManager>;
     getContractAt(
       name: "OracleToken",
       address: string,

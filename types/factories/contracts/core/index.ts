@@ -2,7 +2,10 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as oracleSwapPairSol from "./OracleSwapPair.sol";
+export * as ftso from "./ftso";
 export * as interfaces from "./interfaces";
 export { OracleSwapERC20__factory } from "./OracleSwapERC20__factory";
 export { OracleSwapFactory__factory } from "./OracleSwapFactory__factory";
+export { OracleSwapFtsoReward__factory } from "./OracleSwapFtsoReward__factory";
+export { OracleSwapManager__factory } from "./OracleSwapManager__factory";
 export { OracleSwapRouter__factory } from "./OracleSwapRouter__factory";
